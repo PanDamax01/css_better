@@ -1,0 +1,321 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* better size*/
+html {
+  font-size: 62.5%;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font-size: 2rem;
+  font-family: sans-serif;
+  color: #1e1b1b;
+}
+
+section {
+  margin-bottom: 1em;
+  max-height: 100vh;
+  border: 2px dashed lime;
+}
+section .destription {
+  margin: 1em;
+}
+
+h2 {
+  padding: 1em 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.section--1 .container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://as1.ftcdn.net/jpg/01/41/87/46/1000_F_141874684_WtBdAwIs9tsVILL6obDoY9EzOaLfv0kH.jpg");
+  background-size: cover;
+  background-position-y: 30%;
+  height: 400px;
+  z-index: 1;
+}
+.section--1 .container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+.section--1 .container .text {
+  font-weight: bold;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.section--2 .container {
+  display: flex;
+  padding: 0 2em;
+}
+.section--2 .container p {
+  margin: 0 0.4em;
+  padding: 0.2em;
+  color: #fff;
+  background-color: #333;
+}
+.section--2 .container p:last-child {
+  margin-left: auto;
+}
+
+.section--3 .container img {
+  margin: 0 auto;
+  width: 200px;
+  transition: filter 0.3s;
+}
+.section--3 .container img:hover {
+  filter: invert(1);
+}
+
+.section--4 .container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.section--4 .container ol {
+  counter-reset: section;
+  list-style-type: none;
+  padding: 0;
+}
+.section--4 .container li::before {
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  color: #aaa;
+  width: 5rem;
+  display: inline-block;
+}
+
+.section--5 .container .bubble {
+  position: relative;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100px;
+  height: 80px;
+  background-color: #eee;
+  filter: drop-shadow(0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.6));
+}
+.section--5 .container .bubble::after {
+  content: "";
+  border-top: 1.4rem solid transparent;
+  border-bottom: 1.4rem solid transparent;
+  border-left: 1.75rem solid #eee;
+  display: block;
+  position: absolute;
+  right: -1.75rem;
+  top: 1.75rem;
+}
+
+.section--6 .container h2 {
+  display: grid;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: minmax(1rem, 1fr) auto minmax(1rem, 1fr);
+  grid-gap: 1rem;
+  color: #333;
+}
+.section--6 .container h2:before,
+.section--6 .container h2:after {
+  content: "";
+  height: 2px;
+}
+.section--6 .container h2:before {
+  background-image: linear-gradient(to right, #fff 0%, #aaa 100%);
+}
+.section--6 .container h2:after {
+  background-image: linear-gradient(to left, #fff 0%, #aaa 100%);
+}
+
+.section--8 .container {
+  display: flex;
+  margin: 0 auto;
+  max-width: 232px;
+}
+.section--8 .container label {
+  margin: 0.4em;
+  cursor: pointer;
+}
+.section--8 .container label:hover span::before {
+  background-color: #ccc;
+}
+.section--8 .container span {
+  display: flex;
+  align-items: center;
+}
+.section--8 .container span::before {
+  content: "";
+  height: 24px;
+  width: 24px;
+  background-color: #eee;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+}
+.section--8 .container label:last-child span::before {
+  border-radius: 0;
+}
+.section--8 .container input {
+  display: none;
+}
+.section--8 .container label input:checked ~ span::before {
+  background-color: blue;
+  box-shadow: 0 0 0 2px blue, inset 0 0 0 0.33rem #fff;
+}
+
+.section--9 .container {
+  display: flex;
+  margin: 0 auto;
+  max-width: 232px;
+}
+.section--9 label {
+  margin: 0.4em;
+  cursor: pointer;
+}
+.section--9 label:hover span::before {
+  background-color: #ccc;
+}
+.section--9 span {
+  display: flex;
+  align-items: center;
+}
+.section--9 span::before {
+  content: "";
+  height: 24px;
+  width: 24px;
+  background-color: #eee;
+  margin-right: 0.5rem;
+}
+.section--9 input {
+  display: none;
+}
+.section--9 label input:checked ~ span::before {
+  background-color: blue;
+  box-shadow: 0 0 0 2px blue, inset 0 0 0 0.33rem #fff;
+}
+
+.section--10 .container {
+  display: flex;
+  justify-content: center;
+}
+.section--10 .container p::-moz-selection {
+  color: #fff;
+  background: red;
+}
+.section--10 .container p::selection {
+  color: #fff;
+  background: red;
+}
+
+.section--13 .container {
+  display: flex;
+  justify-content: center;
+}
+.section--13 .container button {
+  padding: 0.5rem 2rem;
+  color: #fff;
+  background-color: hsl(211, 100%, 50%);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 2rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.section--13 .container button:hover {
+  background-color: hsl(211, 77.4%, 32.85%);
+}
+
+.section--14 .container {
+  display: flex;
+  justify-content: center;
+}
+.section--14 ul {
+  border: 1px solid red;
+}
+.section--14 li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.section--15 .container {
+  display: flex;
+  justify-content: center;
+}
+.section--15 .container img {
+  width: 200px;
+  margin: 0 1em;
+}
+.section--15 .container img:last-child {
+  transform: scale(-1, 1);
+}/*# sourceMappingURL=main.css.map */

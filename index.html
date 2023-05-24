@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css trick</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.jpg">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <main>
+        <!-- SECTION 1 -->
+        <section class="section section--1">
+            <h2>Pseudoelement dający cień:</h2>
+
+            <div class="container">
+                <span class="text">Jakis tekst i jest widoczny</span>
+            </div>
+
+            <p class="destription"><b>Opis:</b> z-index: 1 i -1 oraz tło || Dzieki temu łatwiej widac tekst i nawet
+                fajnie wygląda</p>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="section section--2">
+            <h2>Przesuń jeden element elastyczny w prawo</h2>
+
+            <div class="container">
+                <p>Tutaj jest tekst</p>
+                <p>Tutaj jest tekst</p>
+                <p>Tutaj jest tekst</p>
+            </div>
+
+            <p class="destription"><b>Opis:</b> margin-left: auto; rodzic display: flex || Dzięki temu nie trzeba znowu
+                opakowywać w kolejnego diva i oddzielać, mnie kodu i obiekt jest skierowany w inną strone.</p>
+        </section>
+
+        <!-- SECTION 3 -->
+        <section class="section section--3">
+            <h2>Odwróć kolor ikony po najechaniu myszką</h2>
+
+            <div class="container">
+                <figure>
+                    <img
+                        src="https://media.istockphoto.com/id/1130588880/pl/wektor/czarna-ikona-telefonu-na-bia%C5%82ym-tle-ilustracja-wektorowa.jpg?s=612x612&w=0&k=20&c=5cwNm-GqlxTwAKJubaYQ3xxn5Xf7sb3GMOTUwoThMdw=">
+                </figure>
+            </div>
+
+            <p class="destription"><b>Opis:</b> filter: invert(1) || no co odwraca kolor</p>
+        </section>
+
+        <!-- SECTION 4 -->
+        <section class="section section--4">
+            <h2>Uporządkowane liczniki list zagnieżdżonych</h2>
+
+            <div class="container">
+                <ol>
+                    <li>Primary 1
+                        <ol>
+                            <li>Sub 1</li>
+                            <li>Sub 2</li>
+                        </ol>
+                    </li>
+                    <li>Primary 2
+                        <ol>
+                            <li>Sub 1</li>
+                            <li>Sub 2</li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <p class="destription"><b>Opis:</b> No co lista</p>
+        </section>
+
+        <!-- SECTION 5 -->
+        <section class="section section--5">
+            <h2>Cień wokół wielu elementów</h2>
+
+            <div class="container">
+                <div class="bubble">
+                    <p>Witam</p>
+                </div>
+            </div>
+
+            <p class="destription"><b>Opis:</b> filter: drop-shadow(.1rem .1rem .1rem rgba(0,0,0,.6)) || Daje cień i
+                tyle, lepsze niż box-shadow</p>
+        </section>
+
+        <!-- SECTION 6 -->
+        <section class="section section--6">
+            <h2>Nagłówek i linie</h2>
+
+            <div class="container">
+                <h2>Nagłówek</h2>
+            </div>
+
+            <p class="destription"><b>Opis:</b> before i after || gridem aby było ciekawie </p>
+        </section>
+
+        <!-- SECTION 7 -->
+        <section class="section section--7">
+            <h2>Cienie SVG</h2>
+
+            <div class="container">
+                <p>Jeśli użyjesz box-shadoww pliku SVG, po prostu doda cień jak ramka wokół obrazu.
+                    Aby mieć cień SVG wokół elementu, musisz użyć filter: drop-shadowzamiast tego.</p>
+            </div>
+
+            <p class="destription"><b>Opis: </b> filter: drop-shadow( .25rem .25rem .25rem rgba(0, 0, 0, .7)) || to
+                działa?</p>
+        </section>
+
+        <!-- SECTION 8 -->
+        <section class="section section--8">
+            <h2>Niestandardowe radio CSS</h2>
+
+            <div class="container">
+                <label>
+                    <input type="radio" name="group">
+                    <span>Radio 1</span>
+                </label>
+                <label>
+                    <input type="radio" name="group">
+                    <span>Radio 2</span>
+                </label>
+            </div>
+
+            <p class="destription"><b>Opis:</b> display: none i ::before || ciekawe</p>
+        </section>
+
+        <!-- SECTION 9 -->
+        <section class="section section--9">
+            <h2>Custom Checkboxes</h2>
+
+            <div class="container">
+                <label>
+                    <input type="checkbox">
+                    <span class="checkmark">One</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="checkmark">Two</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span class="checkmark">Three</span>
+                </label>
+            </div>
+
+            <p class="destription"><b>Opis:</b> To samo co wcześcniej</p>
+        </section>
+
+        <!-- SECTION 10 -->
+        <section class="section section--10">
+            <h2>Zmień wybrany styl tekstu. poprostu zazancz</h2>
+
+            <div class="container">
+                <p>Zazanacz mnie to zobaczyzs!</p>
+            </div>
+
+            <p class="destription"><b>Opis:</b> ::selection || moze gdzies to wykorzystam</p>
+        </section>
+
+        <!-- SECTION 11 -->
+        <section class="section section--11">
+            <h2>Akordeon z niestandardową strzałką zmieniającą kierunek</h2>
+            <a href="https://csspoo-com.translate.goog/page/8?_x_tr_sl=auto&_x_tr_tl=pl&_x_tr_hl=pl" target="_blank"
+                rel="noopener">Link es</a>
+            <h2>Tła za zdjeciami</h2>
+
+            <div class="container">
+                możemy dać jakiś backgroun color: #333 i jak sie nie zaladuje to widzimy jak to wygladatak img
+            </div>
+
+            <p class="destription"><b>Opis:</b> backgroun color: #333 || zajefajnie wygląda podczas wczytywania</p>
+        </section>
+
+        <!-- SECTION 12 -->
+        <section class="section section--12">
+            <h2>Stylizuj obrazy małe</h2>
+
+            <div class="container">
+                <pre>
+                    img  src="image.jpg#small"
+                </pre>
+                <pre>
+                    a tak w css:
+                    img[src*="#small"] {
+                        width:150px;
+                        height:100px;
+                    }
+                </pre>
+            </div>
+
+            <p class="destription"><b>Opis:</b> Po co?</p>
+        </section>
+
+        <!-- SECTION 13 -->
+        <section class="section section--13">
+            <h2>Idealny przycisk</h2>
+
+            <div class="container">
+                <button>Przycisk</button>
+            </div>
+
+            <p class="destription"><b>Opis:</b> rem || przycisk na podstawie fontsize</p>
+        </section>
+
+        <!-- SECTION 14 -->
+        <section class="section section--14">
+            <h2>Zaznacz wszystkie oprócz ostatniego</h2>
+
+            <div class="container">
+                <ul>
+                    <li>List numer 1</li>
+                    <li>List numer 2</li>
+                    <li>List numer 3</li>
+                </ul>
+            </div>
+
+            <p class="destription"><b>Opis:</b> li:not(:last-child) || skraca kod bo nie musze się znowu odwoływać i
+                dopisywc last child a tak to zamkniete w jednym</p>
+        </section>
+
+        <!-- SECTION 15 -->
+        <section class="section section--15">
+            <h2>Odwrócenie obrazka</h2>
+
+            <div class="container">
+                <img src="https://csspoo.com/images/s.jpg" alt="Pędzel">
+                <img src="https://csspoo.com/images/s.jpg" alt="Pędzel">
+            </div>
+
+            <p class="destription"><b>Opis:</b> transform: scale(-1, 1); || Odwracamy może gdzieś to wykorzystam</p>
+        </section>
+
+        <!-- SECTION 16 -->
+        <section class="section section--16">
+            <h2>Usuń dolną przestrzeń obrazu</h2>
+
+            <div class="container">
+                <p>
+                    Ponieważ obraz jest domyślnie elementem wbudowanym, mają one małą przestrzeń na dole. Istnieje wiele
+                    sposobów, aby się go pozbyc.
+                </p>
+                <pre>
+                    Wystarczy:
+                    img {
+                    vertical-align: top;
+                    }
+                </pre>
+            </div>
+
+            <p class="destription"><b>Opis:</b>vertical-align: top || Usuwa dolną cześć</p>
+        </section>
+
+        <!-- <section class="section section--2">
+        <h2>Tytuł</h2>
+
+        <div class="container">
+            
+        </div>
+
+        <p class="destription"><b>Opis:</b>  </p>
+    </section> -->
+
+    </main>
+
+
+</body>
+
+</html>

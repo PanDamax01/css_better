@@ -1,0 +1,394 @@
+//    --------   RESET
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* better size*/
+html {
+	font-size: 62.5%;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+	margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+//  ----- To all
+body {
+	font-size: 2rem;
+	font-family: sans-serif;
+	color: #1e1b1b;
+}
+
+section {
+	margin-bottom: 1em;
+	max-height: 100vh;
+	border: 2px dashed lime;
+
+	.destription {
+		margin: 1em;
+	}
+}
+
+h2 {
+	padding: 1em 0;
+	font-size: 3rem;
+	text-align: center;
+}
+
+//   ----- section 1
+.section--1 {
+	.container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-image: url('https://as1.ftcdn.net/jpg/01/41/87/46/1000_F_141874684_WtBdAwIs9tsVILL6obDoY9EzOaLfv0kH.jpg');
+		background-size: cover;
+		background-position-y: 30%;
+		height: 400px;
+		z-index: 1;
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.6);
+			z-index: -1;
+		}
+
+		.text {
+			font-weight: bold;
+			color: #fff;
+			font-size: 3rem;
+		}
+	}
+}
+
+//   ----- section 2
+.section--2 {
+	.container {
+		display: flex;
+		padding: 0 2em;
+
+		p {
+			margin: 0 0.4em;
+			padding: 0.2em;
+			color: #fff;
+			background-color: #333;
+		}
+
+		p:last-child {
+			margin-left: auto;
+		}
+	}
+}
+
+//   ----- section 3
+.section--3 {
+	.container {
+		img {
+			margin: 0 auto;
+			width: 200px;
+			transition: filter 0.3s;
+		}
+
+		img:hover {
+			filter: invert(1);
+		}
+	}
+}
+
+//   ----- section 4
+.section--4 {
+	.container {
+		max-width: 500px;
+		margin: 0 auto;
+
+		ol {
+			counter-reset: section;
+			list-style-type: none;
+			padding: 0;
+		}
+
+		li::before {
+			counter-increment: section;
+			content: counters(section, '.') ' ';
+			color: #aaa;
+			width: 5rem;
+			display: inline-block;
+		}
+	}
+}
+
+//   ----- section 5
+.section--5 {
+	.container {
+		.bubble {
+			position: relative;
+			margin: 0 auto;
+			padding: 1em;
+			width: 100px;
+			height: 80px;
+			background-color: #eee;
+			filter: drop-shadow(0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.6));
+
+			&::after {
+				content: '';
+				border-top: 1.4rem solid transparent;
+				border-bottom: 1.4rem solid transparent;
+				border-left: 1.75rem solid #eee;
+				display: block;
+				position: absolute;
+				right: -1.75rem;
+				top: 1.75rem;
+			}
+		}
+	}
+}
+
+//   ----- section 6
+.section--6 {
+	.container {
+		h2 {
+			display: grid;
+			width: 100%;
+			align-items: center;
+			text-align: center;
+			grid-template-columns: minmax(1rem, 1fr) auto minmax(1rem, 1fr);
+			grid-gap: 1rem;
+			color: #333;
+		}
+
+		h2:before,
+		h2:after {
+			content: '';
+			height: 2px;
+		}
+
+		h2:before {
+			background-image: linear-gradient(to right, #fff 0%, #aaa 100%);
+		}
+
+		h2:after {
+			background-image: linear-gradient(to left, #fff 0%, #aaa 100%);
+		}
+	}
+}
+
+//   ----- section 8
+.section--8 {
+	.container {
+		display: flex;
+		margin: 0 auto;
+		max-width: 232px;
+
+		label {
+			margin: 0.4em;
+			cursor: pointer;
+
+			&:hover span::before {
+				background-color: #ccc;
+			}
+		}
+
+		span {
+			display: flex;
+			align-items: center;
+		}
+
+		span::before {
+			content: '';
+			height: 24px;
+			width: 24px;
+			background-color: #eee;
+			margin-right: 0.5rem;
+			border-radius: 50%;
+		}
+
+		label:last-child span::before {
+			border-radius: 0;
+		}
+
+		input {
+			display: none;
+		}
+
+		label input:checked ~ span::before {
+			background-color: blue;
+			box-shadow: 0 0 0 2px blue, inset 0 0 0 0.33rem #fff;
+		}
+	}
+}
+
+//   ----- section 9
+.section--9 {
+	.container {
+		display: flex;
+		margin: 0 auto;
+		max-width: 232px;
+	}
+
+	label {
+		margin: 0.4em;
+		cursor: pointer;
+
+		&:hover span::before {
+			background-color: #ccc;
+		}
+	}
+
+	span {
+		display: flex;
+		align-items: center;
+	}
+
+	span::before {
+		content: '';
+		height: 24px;
+		width: 24px;
+		background-color: #eee;
+		margin-right: 0.5rem;
+	}
+
+	input {
+		display: none;
+	}
+
+	label input:checked ~ span::before {
+		background-color: blue;
+		box-shadow: 0 0 0 2px blue, inset 0 0 0 0.33rem #fff;
+	}
+}
+
+//   ----- section 10
+.section--10 {
+	.container {
+		display: flex;
+		justify-content: center;
+
+		p::selection {
+			color: #fff;
+			background: red;
+		}
+	}
+}
+
+//   ----- section 13
+.section--13 {
+	.container {
+		display: flex;
+		justify-content: center;
+
+		button {
+			padding: 0.5rem 2rem;
+			color: #fff;
+			background-color: hsl(211, 100%, 50%);
+			border: none;
+			border-radius: 0.25rem;
+			font-size: 2rem;
+			transition: background-color 0.3s;
+			cursor: pointer;
+
+			&:hover {
+				background-color: hsl(211deg 77.4% 32.85%);
+			}
+		}
+	}
+}
+
+//   ----- section 14
+.section--14 {
+	.container {
+		display: flex;
+		justify-content: center;
+	}
+
+	ul {
+		border: 1px solid red;
+	}
+
+	li:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+//   ----- section 15
+.section--15 {
+	.container {
+		display: flex;
+		justify-content: center;
+
+		img {
+			width: 200px;
+			margin:0 1em;
+
+            &:last-child{
+                transform: scale(-1, 1);
+            }
+		}
+	}
+}
+
+//   ----- section 15
